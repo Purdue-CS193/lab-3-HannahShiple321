@@ -5,7 +5,7 @@ public class MathUtils {
      */
     public static double divideNumbers(double dividend, double divisor) {
         /* Do some casual division ... Super easy ... Shouldn't be any problems here */
-        double res = dividend / divisor;
+        double res = (dividend / divisor);
         /* Return the DEFINITELY CORRECT result */
         return res;
     }
@@ -16,15 +16,15 @@ public class MathUtils {
      */
     public static double raiseToPower(double base, double exp) {
         /* Set initial result to be just the number */
-        double res = 1;
+        double res = 1.0;
 
         /* Determine if the exponent is negative */
         boolean isNegative = false;
         if (exp < 0) {
-            exp *= -1;
+            //exp *= -1;
             isNegative = true;
         }
-        if (exp == 1) {
+        else if (exp == 1) {
             return base;
         }
 
@@ -37,7 +37,7 @@ public class MathUtils {
 
         /* If it's a negative exponent, we should invert it! */
         if (isNegative) {
-            double dividedRes = divideNumbers(1.0, res);
+            double dividedRes = divideNumbers(exp, base);
             return dividedRes;
         }
         /* Otherwise, we are safe to just return the result */
